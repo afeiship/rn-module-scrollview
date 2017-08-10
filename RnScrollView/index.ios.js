@@ -11,6 +11,7 @@ import {
   Text,
   RefreshControl,
   ScrollView,
+  WebView,
   SegmentedControlIOS,
   View
 } from 'react-native';
@@ -44,6 +45,8 @@ export default class RnScrollView extends Component {
         }
       contentContainerStyle={styles.container}>
 
+      <WebView bounces={false} style={styles.testStyle} source={{ uri: 'https://www.baidu.com'}} />
+
       <SegmentedControlIOS
         style={{ width:'80%'}}
         values={['One', 'Two']}
@@ -68,6 +71,13 @@ export default class RnScrollView extends Component {
 }
 
 const styles = StyleSheet.create({
+  testStyle:{
+    borderWidth:1,
+    borderColor:'#f00',
+    borderStyle:'solid',
+    width:375,
+    height:667
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
